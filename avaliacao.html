@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliações da Minha Loja</title>
+    <!-- Incluindo o Tailwind CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- CSS customizado para estilos adicionais -->
+    <style>
+        /* Estilos adicionais */
+        .carousel-container {
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.3s ease-out;
+        }
+        .carousel-item {
+            flex: 0 0 auto;
+            width: calc(100% / 5);
+            margin-right: 1rem;
+            background-color: #ffffff;
+            color: #4b5563;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .carousel-item .avatar {
+            display: flex;
+            align-items: center;
+        }
+        .avatar img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        .rating {
+            display: flex;
+            align-items: center;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .rating span {
+            font-size: 1rem;
+            color: #9ca3af; /* Cinza */
+            margin-right: 0.1rem;
+        }
+        .carousel-item p {
+            margin-bottom: 0;
+            font-size: 1rem;
+            font-weight: 300;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #1f2937;
+            color: #ffffff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            z-index: 10;
+        }
+        #prevButton { left: 1rem; }
+        #nextButton { right: 1rem; }
+    </style>
+</head>
+<body class="bg-gray-100 flex justify-center items-center h-screen">
+    <div class="container mx-auto py-6">
+        <!-- Controle do Carrossel -->
+        <div class="carousel-container relative">
+            <!-- Botão de navegação anterior -->
+            <button id="prevButton" class="carousel-button" aria-label="Previous">&lt;</button>
+            <div id="carouselTrack" class="carousel-track space-x-4">
+                <!-- Card de Avaliação 1 -->
+                <div class="carousel-item">
+                    <div class="avatar">
+                        <img src="https://cdn.pixabay.com/photo/2014/09/03/03/54/beautiful-woman-434015_960_720.jpg" alt="Foto do avaliador">
+                        <div>
+                            <h5 class="font-semibold text-lg text-gray-800">Nome do Avaliador 1</h5>
+                            <div class="rating">
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Excelente atendimento na Nandita! Produtos chegaram rapidamente e são de ótima qualidade."</p>
+                </div>
+
+                <!-- Card de Avaliação 2 -->
+                <div class="carousel-item">
+                    <div class="avatar">
+                        <img src="https://cdn.pixabay.com/photo/2014/09/03/03/54/beautiful-woman-434015_960_720.jpg" alt="Foto do avaliador">
+                        <div>
+                            <h5 class="font-semibold text-lg text-gray-800">Nome do Avaliador 2</h5>
+                            <div class="rating">
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Recomendo muito a Nandita! Sempre encontro o que preciso com facilidade e rapidez."</p>
+                </div>
+
+                <!-- Card de Avaliação 3 -->
+                <div class="carousel-item">
+                    <div class="avatar">
+                        <img src="https://cdn.pixabay.com/photo/2014/09/03/03/54/beautiful-woman-434015_960_720.jpg" alt="Foto do avaliador">
+                        <div>
+                            <h5 class="font-semibold text-lg text-gray-800">Nome do Avaliador 3</h5>
+                            <div class="rating">
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Meus pedidos sempre chegam dentro do prazo na Nandita. Excelente serviço ao cliente!"</p>
+                </div>
+
+                <!-- Card de Avaliação 4 -->
+                <div class="carousel-item">
+                    <div class="avatar">
+                        <img src="https://cdn.pixabay.com/photo/2014/09/03/03/54/beautiful-woman-434015_960_720.jpg" alt="Foto do avaliador">
+                        <div>
+                            <h5 class="font-semibold text-lg text-gray-800">Nome do Avaliador 4</h5>
+                            <div class="rating">
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Ótima loja! Sempre compro na Nandita e nunca me decepciono com a qualidade dos produtos."</p>
+                </div>
+
+                <!-- Card de Avaliação 5 -->
+                <div class="carousel-item">
+                    <div class="avatar">
+                        <img src="https://cdn.pixabay.com/photo/2014/09/03/03/54/beautiful-woman-434015_960_720.jpg" alt="Foto do avaliador">
+                        <div>
+                            <h5 class="font-semibold text-lg text-gray-800">Nome do Avaliador 5</h5>
+                            <div class="rating">
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Adoro comprar na Nandita! Os produtos são incríveis e o serviço é sempre impecável."</p>
+                </div>
+
+                <!-- Card de Avaliação 6 -->
+                <div class="carousel-item">
+                    <div class="avatar">
+                        <img src="https://cdn.pixabay.com/photo/2014/09/03/03/54/beautiful-woman-434015_960_720.jpg" alt="Foto do avaliador">
+                        <div>
+                            <h5 class="font-semibold text-lg text-gray-800">Nome do Avaliador 6</h5>
+                            <div class="rating">
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Sempre recomendo a Nandita para meus amigos! Serviço rápido e produtos de alta qualidade."</p>
+                </div>
+
+                <!-- Card de Avaliação 7 -->
+                <div class="carousel-item">
+                    <div class="avatar">
+                        <img src="https://cdn.pixabay.com/photo/2014/09/03/03/54/beautiful-woman-434015_960_720.jpg" alt="Foto do avaliador">
+                        <div>
+                            <h5 class="font-semibold text-lg text-gray-800">Nome do Avaliador 7</h5>
+                            <div class="rating">
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Minhas experiências na Nandita sempre foram excelentes! Recomendo de olhos fechados."</p>
+                </div>
+
+                <!-- Card de Avaliação 8 -->
+                <div class="carousel-item">
+                    <div class="avatar">
+                        <img src="https://cdn.pixabay.com/photo/2014/09/03/03/54/beautiful-woman-434015_960_720.jpg" alt="Foto do avaliador">
+                        <div>
+                            <h5 class="font-semibold text-lg text-gray-800">Nome do Avaliador 8</h5>
+                            <div class="rating">
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"A Nandita é minha loja favorita! Sempre encontro tudo o que preciso e com qualidade."</p>
+                </div>
+
+                <!-- Card de Avaliação 9 -->
+                <div class="carousel-item">
+                    <div class="avatar">
+                        <img src="https://cdn.pixabay.com/photo/2014/09/03/03/54/beautiful-woman-434015_960_720.jpg" alt="Foto do avaliador">
+                        <div>
+                            <h5 class="font-semibold text-lg text-gray-800">Nome do Avaliador 9</h5>
+                            <div class="rating">
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Ótima experiência com a Nandita! Atendimento excelente e produtos de primeira."</p>
+                </div>
+
+                <!-- Card de Avaliação 10 -->
+                <div class="carousel-item">
+                    <div class="avatar">
+                        <img src="https://cdn.pixabay.com/photo/2014/09/03/03/54/beautiful-woman-434015_960_720.jpg" alt="Foto do avaliador">
+                        <div>
+                            <h5 class="font-semibold text-lg text-gray-800">Nome do Avaliador 10</h5>
+                            <div class="rating">
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Sempre muito satisfeito com a Nandita! A qualidade e o atendimento são excepcionais."</p>
+                </div>
+
+                <!-- Card de Avaliação 11 -->
+                <div class="carousel-item">
+                    <div class="avatar">
+                        <img src="https://cdn.pixabay.com/photo/2014/09/03/03/54/beautiful-woman-434015_960_720.jpg" alt="Foto do avaliador">
+                        <div>
+                            <h5 class="font-semibold text-lg text-gray-800">Nome do Avaliador 11</h5>
+                            <div class="rating">
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                                <span>&#9733;</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"Adoro a Nandita! Sempre com um atendimento maravilhoso e produtos incríveis."</p>
+                </div>
+
+            </div>
+            <!-- Botão de navegação seguinte -->
+            <button id="nextButton" class="carousel-button" aria-label="Next">&gt;</button>
+        </div>
+    </div>
+        
+    <script>
+        const track = document.querySelector('#carouselTrack');
+        const prevButton = document.querySelector('#prevButton');
+        const nextButton = document.querySelector('#nextButton');
+
+        let currentIndex = 0;
+        const itemsToShow = 5;
+        let cardWidth = 0;
+
+        function updateCardWidth() {
+            const firstCard = track.children[0];
+            cardWidth = firstCard.offsetWidth + parseInt(getComputedStyle(firstCard).marginRight);
+        }
+
+        function scrollToIndex(index) {
+            currentIndex = index;
+            const scrollAmount = currentIndex * cardWidth;
+            track.style.transform = `translateX(-${scrollAmount}px)`;
+        }
+
+        function updateButtonStates() {
+            prevButton.disabled = currentIndex === 0;
+            nextButton.disabled = currentIndex >= track.children.length - itemsToShow;
+        }
+
+        prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                scrollToIndex(currentIndex);
+                updateButtonStates();
+            }
+        });
+
+        nextButton.addEventListener('click', () => {
+            if (currentIndex < track.children.length - itemsToShow) {
+                currentIndex++;
+                scrollToIndex(currentIndex);
+                updateButtonStates();
+            }
+        });
+
+        window.addEventListener('load', () => {
+            updateCardWidth();
+            scrollToIndex(0);
+            updateButtonStates();
+        });
+
+        window.addEventListener('resize', () => {
+            updateCardWidth();
+            scrollToIndex(currentIndex);
+            updateButtonStates();
+        });
+    </script>
+</body>
+</html>
